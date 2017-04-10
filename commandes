@@ -1,0 +1,66 @@
+In [11]: strat_j1.states
+Out[11]: 
+[(Step: 49, Ball: pos: (75.000000,45.000000), vit: (0.000000,0.000000) (1,0):pos: (61.565938,45.000000), vit: (0.200000,0.000000), action:Acc:(0.200000,0.000000), Shoot:(0.000000,0.000000), Name: (2,0):pos: (88.434062,45.000000), vit: (-0.200000,0.000000), action:Acc:(-0.200000,0.000000), Shoot:(0.000000,0.000000), Name: score : 0-0,
+  (1, 0, 'Stop')),
+ (Step: 100, Ball: pos: (11.418967,51.905149), vit: (-0.285443,0.031000) (1,0):pos: (63.865938,45.000000), vit: (-0.000000,-0.000000), action:Acc:(-0.000000,-0.000000), Shoot:(0.000000,0.000000), Name: (2,0):pos: (37.744078,48.888196), vit: (-0.198698,0.022788), action:Acc:(-0.198698,0.022788), Shoot:(0.000000,0.000000), Name: score : 0-0,
+  (1, 0, 'Attaquant')),
+ (Step: 173, Ball: pos: (75.000000,45.000000), vit: (0.000000,0.000000) (1,0):pos: (52.565938,45.000000), vit: (0.200000,0.000000), action:Acc:(0.200000,0.000000), Shoot:(0.000000,0.000000), Name: (2,0):pos: (97.434062,45.000000), vit: (-0.200000,0.000000), action:Acc:(-0.200000,0.000000), Shoot:(0.000000,0.000000), Name: score : 0-1,
+  (1, 0, 'Defenseur')),
+ (Step: 221, Ball: pos: (18.789672,62.493308), vit: (-0.610442,0.189977) (1,0):pos: (16.720926,54.611765), vit: (-0.133120,0.149262), action:Acc:(-0.133120,0.149262), Shoot:(0.000000,0.000000), Name: (2,0):pos: (50.542214,51.907492), vit: (-0.189708,0.063330), action:Acc:(-0.189708,0.063330), Shoot:(0.000000,0.000000), Name: score : 0-1,
+  (1, 0, 'Dribbler')),
+ (Step: 265, Ball: pos: (30.759451,60.387968), vit: (-0.204685,-0.640818) (1,0):pos: (35.129503,66.064460), vit: (-0.121943,-0.158524), action:Acc:(-0.121943,-0.158524), Shoot:(0.000000,0.000000), Name: (2,0):pos: (34.767258,68.894068), vit: (-0.076259,-0.184891), action:Acc:(-0.076259,-0.184891), Shoot:(0.000000,0.000000), Name: score : 0-1,
+  (1, 0, 'Attaquant')),
+ (Step: 445, Ball: pos: (75.000000,45.000000), vit: (0.000000,0.000000) (1,0):pos: (56.565938,45.000000), vit: (0.200000,0.000000), action:Acc:(0.200000,0.000000), Shoot:(0.000000,0.000000), Name: (2,0):pos: (93.434062,45.000000), vit: (-0.200000,0.000000), action:Acc:(-0.200000,0.000000), Shoot:(0.000000,0.000000), Name: score : 0-2,
+  (1, 0, 'Stop')),
+ (Step: 476, Ball: pos: (30.810476,33.695547), vit: (-1.613240,-0.412695) (1,0):pos: (58.865938,45.000000), vit: (-0.000000,-0.000000), action:Acc:(-0.000000,-0.000000), Shoot:(0.000000,0.000000), Name: (2,0):pos: (62.776998,42.642699), vit: (-0.192569,-0.054011), action:Acc:(-0.192569,-0.054011), Shoot:(0.000000,0.000000), Name: score : 0-2,
+  (1, 0, 'Dribbler')),
+ (Step: 536, Ball: pos: (75.000000,45.000000), vit: (0.000000,0.000000) (1,0):pos: (15.200000,45.000000), vit: (0.200000,0.000000), action:Acc:(0.200000,0.000000), Shoot:(0.000000,0.000000), Name: (2,0):pos: (134.800000,45.000000), vit: (-0.200000,0.000000), action:Acc:(-0.200000,0.000000), Shoot:(0.000000,0.000000), Name: score : 0-3,
+  (1, 0, 'Defenseur')),
+ (Step: 605, Ball: pos: (40.501581,35.768928), vit: (-2.461610,-0.658676) (1,0):pos: (10.174803,39.435158), vit: (-0.008925,-0.199801), action:Acc:(-0.008925,-0.199801), Shoot:(0.000000,0.000000), Name: (2,0):pos: (67.640314,43.788510), vit: (-0.191791,-0.056712), action:Acc:(-0.191791,-0.056712), Shoot:(0.000000,0.000000), Name: score : 0-3,
+  (1, 0, 'Dribbler'))]
+
+In [12]: build_apprentissage(strat_j1.states,my_get_features)
+Out[12]: 
+(array([[  13.434062  ,   88.434062  ,   75.        ],
+        [  52.89958242,   86.134062  ,  138.75295931],
+        [  22.434062  ,   97.434062  ,   75.        ],
+        [   8.14852223,  133.62521312,  132.37131886],
+        [   7.16379227,  116.78588296,  120.22935577],
+        [  18.434062  ,   93.434062  ,   75.        ],
+        [  30.24730754,   91.134062  ,  119.72440559],
+        [  59.8       ,  134.8       ,   75.        ],
+        [  30.54758074,  139.93588945,  109.88683507]]),
+ array(['Stop', 'Attaquant', 'Defenseur', 'Dribbler', 'Attaquant', 'Stop',
+        'Dribbler', 'Defenseur', 'Dribbler'], 
+       dtype='|S9'))
+
+In [13]: datax,datay=build_apprentissage(strat_j1.states,my_get_features)
+
+In [14]: dt = apprend_arbre(datax,datay)
+
+In [15]: affiche_arbre(dt)
+Out[15]: '|---------X2<=92.44\n|         |---------X1<=95.43\n|         |         |---------(Attaquant: 0, Defenseur: 0, Dribbler: 0, Stop: 2)\n|         |---------X1>95.43\n|                   |---------(Attaquant: 0, Defenseur: 2, Dribbler: 0, Stop: 0)\n|---------X2>92.44\n          |---------X1<=125.21\n          |         |---------(Attaquant: 2, Defenseur: 0, Dribbler: 1, Stop: 0)\n          |---------X1>125.21\n                    |---------(Attaquant: 0, Defenseur: 0, Dribbler: 2, Stop: 0)\n'
+
+In [16]: print(affiche_arbre(dt))
+|---------X2<=92.44
+|         |---------X1<=95.43
+|         |         |---------(Attaquant: 0, Defenseur: 0, Dribbler: 0, Stop: 2)
+|         |---------X1>95.43
+|                   |---------(Attaquant: 0, Defenseur: 2, Dribbler: 0, Stop: 0)
+|---------X2>92.44
+          |---------X1<=125.21
+          |         |---------(Attaquant: 2, Defenseur: 0, Dribbler: 1, Stop: 0)
+          |---------X1>125.21
+                    |---------(Attaquant: 0, Defenseur: 0, Dribbler: 2, Stop: 0)
+
+
+In [17]: dic = {"Attaquant":Attaquant(),"Defenseur":Defenseur(),"Stop":Stop(),"Dribbler":Dribbler(),"Attaquant":Attaquant()}
+    ...: treeStrat1 = DTreeStrategy(dt,dic,my_get_features)
+    ...: treeStrat2 = DTreeStrategy(dt,dic,my_get_features)
+    ...: team3 = SoccerTeam("Arbre Team")
+    ...: team3.add("Joueur 1",treeStrat1)
+    ...: team3.add("Joueur 2",treeStrat2)
+    ...: simu = Simulation(team2,team3)
+    ...: show_simu(simu)
+    ...: 
+
